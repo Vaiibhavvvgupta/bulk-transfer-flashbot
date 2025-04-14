@@ -1,0 +1,13 @@
+rpc_url: "https://mainnet.infura.io/v3/20f16a51687043bfb0fe3e74cd767380" # Replace with your Infura key
+flashbots_relay: "https://relay.flashbots.net"  # Goerli for testing
+auth_key: "0xaffb778b93f34b2e27062170b6caccbfd6d5b87e379adee733c629a69855cffd"                    # Generated auth key
+usdt_address: "0x8ec6A5B81537b641b96C831849DDf6fEC32b5127"               # Mock USDT (see Step 7)
+port: "8080"
+environment: "testnet"                                # testnet or mainnet
+encryption_secret: "32-byte-secret-key-1234567890123456" # Replace
+mysql:
+  host: "localhost"
+  port: 3306
+  user: "flashbots_user"
+  password: "secure_password"
+  database: "flashbots"
