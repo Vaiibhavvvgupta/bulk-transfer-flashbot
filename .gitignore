@@ -1,0 +1,28 @@
+# Binaries
+/cmd/api/config.yaml
+
+# Config
+/config/config.yaml
+*.env
+
+# Database
+/d/flashbot-api/wallets.db
+*.sqlite3
+*.sql
+
+# Logs
+*.log
+
+# Go
+/d/flashbot-api/*.test
+/d/flashbot-api/*.prof
+vendor/
+
+# IDE
+/d/flashbot-api/.idea/
+/d/flashbot-api/.vscode/
+
+# Misc
+/d/flashbot-api/*.swp
+/d/flashbot-api/*.swo
+/d/flashbot-api/.DS_Store
