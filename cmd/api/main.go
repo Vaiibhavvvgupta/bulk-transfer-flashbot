@@ -1,12 +1,16 @@
 package main
 
 import (
+	"database/sql"
 	"flashbot-api/eth"
 	"flashbot-api/api"
 	"flashbot-api/config"
+	"os"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/gin-gonic/gin"
+	"github.com/robfig/cron/v3"
 	"github.com/sirupsen/logrus"
+	"gopkg.in/yaml.v3"
 )
 
 func main() {
@@ -21,6 +25,12 @@ func main() {
 	if cfg.Environment == "testnet" {
 		logrus.SetLevel(logrus.DebugLevel)
 	}
+
+	db, err := eth.InitDB(cfg.MySQL)
+	if err != nil {
+		logrus.WithError(err).Fatal("Failed to initialize database")
+	}
+	defer db.Close()
 
 	logrus.WithFields(logrus.Fields{
 		"rpc_url":      cfg.RpcUrl,
